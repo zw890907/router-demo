@@ -1,31 +1,50 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div class="shop-app">
+    <header>
+      <span @click="onGoHome">&lt;返回</span>&nbsp;&nbsp;&nbsp;&nbsp;
+      商品系统
+    </header>
+    <main>
+      <router-view></router-view>
+    </main>
+    <footer>
+      <!-- router-link to 属于声明式导航，跳转至目的组件 -->
+      <router-link to="/">首页</router-link> |
+      <router-link to="/list">列表页</router-link>
+    </footer>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+// 这里需要用到router，先将其引入
+import router from './router'
+export default {
+  methods: {
+    onGoHome () {
+      // router.push属于编程式导航，也是跳转至目的组件
+      router.push({ path: '/' })
+    }
+  }
 }
-#nav {
-  padding: 30px;
-}
+</script>
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+<style lang="scss">
+html,
+body {
+  height: 100%;
+  .shop-app {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    header {
+      height: 50px;
+    }
+    main {
+      flex: 1;
+    }
+    footer {
+      height: 50px;
+    }
+  }
 }
 </style>
