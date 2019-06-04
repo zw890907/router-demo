@@ -21,8 +21,8 @@ import router from './router'
 export default {
   methods: {
     onGoHome () {
-      // router.push属于编程式导航，也是跳转至目的组件
-      router.push({ path: '/' })
+      // router.push属于编程式导航，也是跳转至目的组件,可以使用query传参
+      router.push({ path: '/home', query: { id: 2 } })
     }
   }
 }
