@@ -1,15 +1,17 @@
 <template>
   <div>
-    这里是主页内容
+    <p class="word">这里是主页内容</p>
   </div>
 </template>
 
 <script>
+    export default {
 
-export default {
-
-  components: {
-
-  }
-}
+    }
 </script>
+
+<style scoped>
+.word {
+  color:aqua;
+}
+</style>

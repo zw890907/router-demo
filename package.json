@@ -33,7 +33,16 @@
       "plugin:vue/essential",
       "@vue/standard"
     ],
-    "rules": {},
+    "rules": {
+      "indent": "off",
+      "vue/script-indent": [
+        "error",
+        4,
+        {
+          "baseIndent": 1
+        }
+      ]
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }

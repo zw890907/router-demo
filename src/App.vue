@@ -16,16 +16,16 @@
 </template>
 
 <script>
-// 这里需要用到router，先将其引入
-import router from './router'
-export default {
-  methods: {
-    onGoHome () {
-      // router.push属于编程式导航，也是跳转至目的组件,可以使用query传参
-      router.push({ path: '/home', query: { id: 2 } })
+    // 这里需要用到router，先将其引入
+    import router from './router'
+    export default {
+        methods: {
+            onGoHome () {
+                // router.push属于编程式导航，也是跳转至目的组件,可以使用query传参
+                router.push({ path: '/home', query: { id: 2 } })
+            }
+        }
     }
-  }
-}
 </script>
 
 <style lang="scss">
@@ -44,6 +44,9 @@ body {
     }
     footer {
       height: 50px;
+      .router-link-exact-active {
+        color:#f00;
+      }
     }
   }
 }
